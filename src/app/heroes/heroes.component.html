@@ -1,0 +1,23 @@
+<h2>My Heroes</h2>
+
+<div>
+  <label for="newhero">Hero name: </label>
+  <input id="newhero" size="30" #heroName /> 
+  <label for="newcolor">Hero color: </label>
+  <input id="newcolor" size="30" #heroColor />
+  <label for="newID">Hero ID: </label>
+  <input id="newID" size="30" #heroID />
+
+  <!-- (click) passes input value to add() and then clears the input -->
+  <button type="button"  class="btn btn-primary" (click)="add(heroName.value, heroColor.value, heroID.value);" >
+    Add hero
+  </button>
+</div>
+
+<ul class="heroes">
+  <li *ngFor="let hero of heroes">
+    <a  class="btn btn-secondary" routerLink="/detail/{{hero.id}}"> {{hero.name}}</a>
+    <button type="button" class="btn btn-warning" title="delete hero"
+      (click)="delete(hero)">delete</button>
+  </li>
+</ul>

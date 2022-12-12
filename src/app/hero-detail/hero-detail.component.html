@@ -1,0 +1,30 @@
+<div *ngIf="loggedIn">
+  <div *ngIf="hero">
+    <h2>{{hero.name | uppercase}} Details</h2>
+    <div><span>id: </span>{{hero.id}}</div>
+    <div>
+      <label for="hero-name">Hero name: </label>
+      <input id="hero-name" [(ngModel)]="hero.name" placeholder="Hero name"/> <br>
+      <label for="hero-color">Hero Color: </label> 
+      <input id="hero-color" [(ngModel)]="hero.color" placeholder="Hero color"/> <br>
+      <label for="hero-ownerID">Hero owner ID: </label> 
+      <input id="hero-ownerID"  placeholder= {{hero.owner}}/> <br>
+      <label for="picID">picID: </label>
+      <input id="picID" [(ngModel)]="hero.picID" placeholder="picID"/>
+    
+    </div>
+    <button type="button" class="btn btn-warning" (click)="goBack()">go back</button>
+    <button type="button" class="btn btn-primary" (click)="save()">save</button>
+  </div>
+
+  <div>
+    <img [src]="imageDataURL" alt="profile image" height="200" width="200">>
+  </div><br><br>
+</div>
+
+<div *ngIf="!loggedIn">
+  <h3>
+    You must be logged in to add data
+  </h3>
+  <!-- <signin></signin> -->
+</div>

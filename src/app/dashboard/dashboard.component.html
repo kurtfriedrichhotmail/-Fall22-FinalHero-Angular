@@ -1,0 +1,14 @@
+<h4>{{currentUser}}</h4>
+<img src='{{picVar}}'>
+
+<br><br><br>
+<h3>Top Heroes</h3>
+<div class="heroes-menu">
+  <a *ngFor="let hero of heroes; index as i"
+    routerLink="/detail/{{hero.id}}">
+    {{hero.name}}  <img  src='{{imageURLarray[i]}}'>
+  </a>
+
+
+
+</div>
